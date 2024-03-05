@@ -14,6 +14,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "tw": "npx tailwindcss -i src/pre.css -o src/App.css",
+    "tww": "npx tailwindcss -i src/pre.css -o src/App.css --watch",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,5 +36,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "daisyui": "^4.7.2",
+    "tailwindcss": "^3.4.1"
   }
 }
