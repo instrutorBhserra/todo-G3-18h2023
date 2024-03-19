@@ -6,7 +6,17 @@ import QuestList from "./QuestList";
 import "./App.css";
 
 function App() {
-	const [questList, setQuestList] = useState([]);
+	const questsInStorage = JSON.parse(localStorage.getItem('quests'));
+	console.log(questsInStorage);
+	const [questList, changeQuestList] = useState(
+			questsInStorage !== undefined && questsInStorage?
+			questsInStorage:[]
+		);
+
+	function setQuestList(list){
+		localStorage.setItem('quests', JSON.stringify(list));
+		changeQuestList(list);
+	}
 
 	function addNewQuest(questTitle) {
 		const quests = questList.slice();
